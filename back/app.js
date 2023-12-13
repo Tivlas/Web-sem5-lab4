@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import loadRoutes from './loaders/routes.js';
+import loadRoutes from './src/loaders/routes.js';
 import cors from 'cors'
 import path from 'path'
 import { fileURLToPath } from 'url';
@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: true, limit: '50mb', parameterLimit: 5000
 app.use(express.json({ limit: '50mb' }));
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/test');
+mongoose.connect('mongodb://0.0.0.0:27017/test');
 
 app.use(bodyParser.json());
 loadRoutes(app);

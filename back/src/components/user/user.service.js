@@ -1,4 +1,4 @@
-import Response from '../../utils/response.js';
+import Response from '../../response.js';
 import User from './user.entities.js';
 import bcrypt from 'bcrypt';
 

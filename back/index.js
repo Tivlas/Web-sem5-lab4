@@ -2,8 +2,8 @@ import app from './app.js';
 import passport from 'passport';
 import google from 'passport-google-oauth20';
 const GoogleStrategy = google.Strategy;
-import userModule from '../src/components/user/user.module.js'
-import User from '../src/components/user/user.entities.js';
+import userModule from './src/components/user/user.module.js'
+import User from './src/components/user/user.entities.js';
 import jwt from 'jsonwebtoken';
 
 
@@ -56,10 +56,7 @@ app.get('/auth/google/callback',
             const token = jwt.sign({ _user }, 'privatekey', { expiresIn: '1000h' });
             console.log(token);
             res.redirect(`http://localhost:3000/google-callback?token=${token}`);
-            //return res.status(202).send(token);
         }
-        //res.send('xui');
-
     }
 );
 
