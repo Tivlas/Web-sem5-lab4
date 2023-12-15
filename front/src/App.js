@@ -8,6 +8,7 @@ import Login from './pages/login'
 import Register from './pages/register'
 import FAQ from './pages/faq'
 import News from './pages/news'
+import Other from './pages/other'
 import axios from 'axios';
 import GoogleCallback from './pages/googleCallback'
 
@@ -50,6 +51,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/news" element={<News />} />
+        <Route path="/other" element={<Other />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/login" element={loggedInUser ? <Navigate to="/" /> : <Login onLogin={(user) => { setLoggedInUser(user); console.log(loggedInUser, ' jaba'); }} />} />
         <Route path="/register" element={loggedInUser ? <Navigate to="/" /> : <Register onRegister={(user) => { setLoggedInUser(user); console.log(loggedInUser); }} />} />

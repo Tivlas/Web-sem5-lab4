@@ -16,7 +16,7 @@ const Navigation = () => {
                     <Link to="/news">News</Link>
                 </li>
                 <li>
-                    <Link to="/countries">(Countries and api)</Link>
+                    <Link to="/other">Other</Link>
                 </li>
             </ul>
         </nav>

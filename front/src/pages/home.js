@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import TripList from '../components/tripList';
-//import ApiJoke from '../components/ApiJoke';
-//import ApiImage from '../components/ApiImage';
+import ApiJoke from '../components/apiJoke';
+import ApiImage from '../components/apiFactAboutCat';
 import Header from '../components/header';
 import { useLocation } from 'react-router-dom';
 
@@ -19,8 +19,8 @@ const Home = ({ loggedInUser, onLogout }) => {
                 {loggedInUser && <Link to="/add-trip" className="add-trip-link">Add trip</Link>}
             </div>
 
-            {/* <ApiJoke /> */}
-            {/* <ApiImage /> */}
+            <ApiJoke />
+            <ApiImage />
         </div>
     );
 };
