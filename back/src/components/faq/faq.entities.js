@@ -7,12 +7,6 @@ const FaqSchema = new mongoose.Schema({
     postDate: {
         type: Date,
         default: Date.now,
-        validate: {
-            validator: function (value) {
-                return value >= this.postDate;
-            },
-            message: 'Post date must not be earlier than the current date.'
-        }
     }
 });
 

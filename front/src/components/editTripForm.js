@@ -24,7 +24,7 @@ const EditTripForm = () => {
             try {
                 const tripResponse = await axios.get(`http://localhost:8000/trip/${id}`, {
                     headers: {
-                        Authorization: `Bearer ${token}`,
+                        Authorization: token,
                     },
                 });
 

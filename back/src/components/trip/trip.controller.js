@@ -9,7 +9,7 @@ function check_jwt(token) {
             return decoded;
         }
     });
-
+    console.log(decoded);
     if (decoded == undefined) {
         return false;
     }

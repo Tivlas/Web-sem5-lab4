@@ -43,7 +43,7 @@ const TripDetails = ({ loggedInUser }) => {
             const token = localStorage.getItem('token');
             const resp = await axios.delete(`http://localhost:8000/trip/${id}`, {
                 headers: {
-                    Authorization: `Bearer ${token}`
+                    Authorization: token
                 },
             });
             console.log(resp);

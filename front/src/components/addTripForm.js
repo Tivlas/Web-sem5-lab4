@@ -45,10 +45,11 @@ const AddTripForm = () => {
 
         try {
             const token = localStorage.getItem('token');
+            console.log(`add trip token: ${token}`);
             console.log(formData);
             await axios.post(`http://localhost:8000/trip`, formData, {
                 headers: {
-                    Authorization: `Bearer ${token}`,
+                    Authorization: token,
                 },
             });
 
