@@ -2,37 +2,47 @@ import React, { useState, useEffect } from 'react';
 import './styles/utils.css';
 
 const ApiFactAboutCat = () => {
-    const [joke, setJoke] = useState({ setup: '', punchline: '' });
+  const [fact, setFact] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    useEffect(() => {
-        const fetchFact = async () => {
-            try {
-                const response = await fetch('https://catfact.ninja/fact');
+  const checkLoginStatus = () => {
+    // Perform the necessary logic to determine the user's login status
+    // Return true if the user is logged in, false otherwise
+    // Example:
+    return localStorage.getItem('accessToken') !== null;
+  };
 
-                const factData = await response.json();
+  useEffect(() => {
+    const fetchFact = async () => {
+      try {
+        const response = await fetch('https://catfact.ninja/fact');
+        const factData = await response.json();
 
-                console.log(factData[0]);
+        if (factData.fact) {
+          setFact(factData.fact);
+        } else {
+          console.error('Invalid fact data');
+        }
+      } catch (error) {
+        console.error('Error fetching fact:', error.message);
+      }
+    };
 
-                if (factData[0] && factData[0].setup && factData[0].punchline) {
-                    setJoke({ setup: factData[0].setup, punchline: factData[0].punchline });
-                } else {
-                    console.error('Invalid fact data');
-                }
-            } catch (error) {
-                console.error('Error fetching fact:', error.message);
-            }
-        };
+    fetchFact();
+    setIsLoggedIn(checkLoginStatus());
+  }, []);
 
-        fetchFact();
-    }, []);
-    return (
-        <div className='container'>
-            <div className="joke-container">
-                <p className="joke-setup">{joke.setup}</p>
-                <p className="joke-punchline">{joke.punchline}</p>
-            </div>
+  return (
+    <div className='container'>
+      {isLoggedIn ? (
+        <div className="fact-container">
+          <p className="fact-text">{fact}</p>
         </div>
-    );
+      ) : (
+        <p>Please log in to view the cat fact.</p>
+      )}
+    </div>
+  );
 };
 
 export default ApiFactAboutCat;
