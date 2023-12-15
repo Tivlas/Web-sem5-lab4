@@ -26,8 +26,6 @@ class AuthController {
 
         const ret = await userModule.service.addUser(user);
 
-        const tmp_user = ret.data;
-
         if (ret.data == null)
             return res.status(ret.status_code).send(ret.msg);
 
