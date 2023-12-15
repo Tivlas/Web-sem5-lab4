@@ -6,6 +6,8 @@ import EditTrip from './pages/editTrip'
 import AddTrip from './pages/addTrip'
 import Login from './pages/login'
 import Register from './pages/register'
+import FAQ from './pages/faq'
+import News from './pages/news'
 import axios from 'axios';
 import GoogleCallback from './pages/googleCallback'
 
@@ -47,12 +49,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/*
-        <Route path = "/news" component = {News}/>
-        <Route path = "/faq" component = {FAQ}/>*/}
+        <Route path="/news" element={<News />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route path="/login" element={loggedInUser ? <Navigate to="/" /> : <Login onLogin={(user) => { setLoggedInUser(user); console.log(loggedInUser, ' jaba'); }} />} />
         <Route path="/register" element={loggedInUser ? <Navigate to="/" /> : <Register onRegister={(user) => { setLoggedInUser(user); console.log(loggedInUser); }} />} />
-        <Route path="google-callback" onEnter={() => { console.log('xui') }} element={<GoogleCallback onLogin={handleLogin} />} />
+        <Route path="google-callback" element={<GoogleCallback onLogin={handleLogin} />} />
         <Route exact path="/add-trip" element={<AddTrip />} />
         <Route exact path="/" element={<Home loggedInUser={!!loggedInUser} onLogout={handleLogout} />} />
         <Route exact path="/edit-trip/:id" element={<EditTrip />} />
