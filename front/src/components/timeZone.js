@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles/userZone.css';
+import './styles/timeZone.css';
 import Moment from 'moment';
 
 class TimeZoneInfo extends Component {

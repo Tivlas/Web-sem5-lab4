@@ -15,7 +15,7 @@ const TripList = () => {
         const fetchData = async () => {
             console.log('msg', localStorage.getItem('msg'));
             try {
-                let url = 'http://localhost:8000/trips';
+                let url = 'http://localhost:8000/trip';
 
                 if (sortOption) {
                     url += `?sort=${sortOption}`;

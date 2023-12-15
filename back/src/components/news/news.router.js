@@ -1,4 +1,3 @@
-
 import express from 'express';
 
 class NewsRouter {
@@ -8,7 +7,7 @@ class NewsRouter {
 
     getRouter() {
         const router = express.Router();
-        router.route('/').get(this.newsController.getCountries);
+        router.route('/').get(this.newsController.getNews);
         return router;
     }
 }

@@ -8,7 +8,7 @@ class FaqRouter {
 
     getRouter() {
         const router = express.Router();
-        router.route('/').get(this.faqController.getCountries);
+        router.route('/').get(this.faqController.getFaqs);
         return router;
     }
 }
