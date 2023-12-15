@@ -10,7 +10,16 @@ const TripSchema = new mongoose.Schema({
         required: true
     },
     description: String,
-    departureDate: Date,
+    departureDate: {
+        type: Date,
+        default: Date.now,
+        validate: {
+            validator: function (value) {
+                return value >= this.postDate;
+            },
+            message: 'Departure date must not be earlier than the current date.'
+        }
+    },
     price: {
         type: Number,
         min: [0, 'Price cannot be negative']
