@@ -68,11 +68,11 @@ class TripService {
                 });
             }
         }
-
+        console.log(find);
         if (find != null) {
             trips = trips.filter((trip) => trip.name.startsWith(find));
         }
-
+        console.log("TRIPS", trips);
         return new Response(trips, 200, "Get Successfull");
     }
 

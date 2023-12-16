@@ -68,7 +68,7 @@ const EditTripForm = () => {
                 },
             });
 
-            navigate(`/trip/${id}`);
+            navigate(`/`);
         } catch (error) {
             console.error('Error editing trip:', error.message);
 

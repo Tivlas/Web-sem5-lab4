@@ -38,11 +38,11 @@ const TripList = () => {
                     }
                 }
 
-                console.log(url);
+                console.log("URL", url);
 
                 const response = await axios.get(url);
-                console.log(response);
                 setTrips(response.data);
+                console.log("RESPONSE data", response.data);
             } catch (error) {
                 console.error('Error fetching trips:', error.message);
             }
@@ -81,19 +81,19 @@ const TripList = () => {
                 <button onClick={() => handleSortChange('asc')}>Sort by Price (Asc)</button>
                 <button onClick={() => handleSortChange('desc')}>Sort by Price (Desc)</button>
                 <select id="countrySelect" onChange={handleCountryChange} value={selectedCountryId}>
-                    <option value="">All</option>
                     {countries.map((country) => (
-                        <option className='select-dropdown__list-item' key={country.id} value={country.id}>
+                        <option className='select-dropdown__list-item' value={country.id}>
                             {country.name}
                         </option>
                     ))}
+                    <option value="">All</option>
                 </select>
                 <input type="text" onChange={handleFindChange} />
             </div>
             <div className="listTripCenter">
                 <ul className="trip-list">
-                    {trips.map((trip) => (
-                        <li key={trip.id} className="trip-item">
+                    {trips && trips.map((trip) => (
+                        <li  className="trip-item">
                             <Link to={`/trip/${trip.id}`} className="trip-link">
                                 <p className="trip-details">{trip.name} {trip.description}</p>
                             </Link>
