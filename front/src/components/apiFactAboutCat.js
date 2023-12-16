@@ -6,10 +6,7 @@ const ApiFactAboutCat = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const checkLoginStatus = () => {
-    // Perform the necessary logic to determine the user's login status
-    // Return true if the user is logged in, false otherwise
-    // Example:
-    return localStorage.getItem('accessToken') !== null;
+    return localStorage.getItem('token') !== null;
   };
 
   useEffect(() => {

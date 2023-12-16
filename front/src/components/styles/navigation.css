@@ -1,0 +1,48 @@
+nav {
+    background-color: #13b0e0;
+    /* Коричневый цвет в ретро-стиле */
+    padding: 10px;
+    box-shadow: 1px 4px 8px rgb(0, 0, 0);
+    /* Добавляем тень */
+    border-radius: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    /* Используем моноширинный шрифт для ретро-стиля */
+}
+
+li:not(:last-child) {
+    display: block;
+    margin-bottom: 10px;
+    /* Добавляем отступ между элементами списка */
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    /* Меняем цвет текста на песочный */
+    font-weight: bold;
+    text-transform: uppercase;
+    /* Переводим текст в верхний регистр */
+    display: block;
+    padding: 10px;
+    background-color: #3f52cd;
+    /* Добавляем фон с золотистым цветом */
+    border-radius: 5px;
+    /* Закругляем углы кнопок */
+    margin: 0 auto;
+    /* Центрируем кнопки */
+    width: 120px;
+    /* Устанавливаем фиксированную ширину кнопок */
+}
+
+a:hover {
+    background-color: #13b0e0;
+    /* Изменяем цвет фона кнопки при наведении на коричневый */
+    color: #fff;
+}   

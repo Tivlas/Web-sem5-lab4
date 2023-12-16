@@ -32,7 +32,6 @@ app.get('/auth/google/callback',
     passport.authenticate('google', { session: false }),
     async function (req, res) {
         // Создание и подписание JWT токена
-        console.log(req.user._json.email, 'qweqwe');
         const _user = await userModule.service.getUserByEmail(req.user._json.email);
         if (_user == null) {
             var randomstring = Math.random().toString(36).slice(-8);
@@ -46,8 +45,6 @@ app.get('/auth/google/callback',
             const token = jwt.sign({ _user }, 'privatekey', { expiresIn: '1000h' });
             console.log(token);
             res.redirect(`http://localhost:3000/google-callback?token=${token}`);
-
-            //return res.status(ret.status_code).send(ret.data);
         }
         else {
             console.log(_user, 'asd');
