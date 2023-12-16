@@ -47,9 +47,7 @@ app.get('/auth/google/callback',
             res.redirect(`http://localhost:3000/google-callback?token=${token}`);
         }
         else {
-            console.log(_user, 'asd');
             const tmp_user = new User({ name: _user.name, phone: _user.phone, role: _user.role, password: _user.password, email: _user.email });
-            console.log(tmp_user, 'zxc');
             const token = jwt.sign({ _user }, 'privatekey', { expiresIn: '1000h' });
             console.log(token);
             res.redirect(`http://localhost:3000/google-callback?token=${token}`);

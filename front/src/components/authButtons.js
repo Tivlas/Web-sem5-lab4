@@ -4,18 +4,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GoogleButton from './googleButton';
 import './styles/timeZone.css';
-
-const AuthButtons = ({ isAuthenticated, onLogout, onParentLogout }) => {
+// { isAuthenticated, onLogout, onParentLogout }
+const AuthButtons = (props) => {
     const handleLogout = () => {
         console.log('Logout clicked');
-        onLogout();
-        onParentLogout();
+        props.onLogout();
+        props.onParentLogout();
     };
 
     return (
         <div className="right-panel">
             <ul className="auth-buttons">
-                {!isAuthenticated ? (
+                {!props.isAuthenticated ? (
                     <>
                         <li>
                             <Link to="/login">

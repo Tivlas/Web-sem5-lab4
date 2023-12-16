@@ -1,5 +1,3 @@
-// Header.js
-
 import React, { useState, useEffect } from 'react';
 import AuthButtons from '../components/authButtons';
 import TimeZoneInfo from '../components/timeZone';
