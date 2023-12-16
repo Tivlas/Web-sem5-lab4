@@ -5,11 +5,14 @@ nav {
     box-shadow: 1px 4px 8px rgb(0, 0, 0);
     /* Добавляем тень */
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 ul {
     list-style-type: none;
     margin: 0;
+    display: flex;
     padding: 0;
     text-align: center;
     font-family: 'Courier New', monospace;
@@ -17,8 +20,9 @@ ul {
 }
 
 li:not(:last-child) {
-    display: block;
+    display: inline;
     margin-bottom: 10px;
+    margin-right: 10px;
     /* Добавляем отступ между элементами списка */
 }
 

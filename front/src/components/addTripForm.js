@@ -103,11 +103,13 @@ const AddTripForm = () => {
 
             <label className="form-label">
                 Departure date:
-                <input
+                <input type='date'
                     className="form-textarea"
                     name="departureDate"
                     value={formData.departureDate}
                     onChange={handleChange}
+                    pattern="\d{4}-\d{2}-\d{2}"
+                    required
                 />
             </label>
 

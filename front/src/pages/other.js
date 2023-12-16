@@ -7,6 +7,8 @@ import BlurHandlerExample from '../components/other/BlurHandlerExample';
 import MouseOverHandlerExample from '../components/other/MouseOverHandlerExample';
 import KeyPressHandlerExample from '../components/other/KeyPressHandlerExample';
 import DefaultPropsComponent from '../components/other/DefaultPropsComponent'
+import './styles/other.css';
+
 
 function EventHandlersPage() {
   return (

@@ -10,7 +10,7 @@ class TimeZoneInfo extends Component {
             localTime: '',
             utcTime: '',
             userTimeZone: '',
-            data: ''
+            date: ''
         };
     }
 
@@ -26,7 +26,9 @@ class TimeZoneInfo extends Component {
     getUserTimeZoneInfo = () => {
         const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         this.setState({ userTimeZone: timeZone });
-        this.setState({ data: new Date().toLocaleString() });
+        const a = new Date().toLocaleString();
+        const b = a.split(',')[0];
+        this.setState({ data:  b});
     };
 
     updateTimes = () => {
@@ -58,7 +60,7 @@ class TimeZoneInfo extends Component {
                 <p>User timezone: <span>{this.state.userTimeZone}</span></p>
                 <p>Local time: <span>{this.state.localTime}</span></p>
                 <p>UTC time: <span>{this.state.utcTime}</span></p>
-                <p>Local date: <span>{Moment(this.state.data).format('MMM Do YYYY')}</span></p>
+                <p>Local date: <span>{this.state.data}</span></p>
             </div>
         );
     }

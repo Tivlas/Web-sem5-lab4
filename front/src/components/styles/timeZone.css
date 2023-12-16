@@ -74,6 +74,8 @@ body {
     margin: 0;
     padding: 0;
     float: right;
+    display: flex;
+    flex-direction: column;
 }
 
 .auth-buttons li {
@@ -83,10 +85,9 @@ body {
 
 .auth-buttons button {
     padding: 10px 15px;
-    font-size: 14px;
+    font-size: 20px;
     cursor: pointer;
     background-color: #13b0e0;
-    /* Коричневый цвет фона кнопки */
     color: white;
     border: none;
     border-radius: 4px;
@@ -94,7 +95,6 @@ body {
 
 .auth-buttons button:hover {
     background-color: #3f52cd;
-    /* Темно-оранжевый цвет при наведении на кнопку */
 }
 
 .auth-buttons a {
@@ -108,7 +108,7 @@ body {
 
 /* Стили для компонента Header */
 .header {
-    background-color: #13b0e0;
+    background-color: #13b0e0;  
     color: #fff;
 }
 
@@ -120,29 +120,30 @@ body {
     margin: 0;
 }
 
-/* Дополнительные стили для компонента Header */
 .user-greeting {
     float: center;
     margin-top: 20px;
-    color: #f0cbb2;
+    color: #1df50d;
 }
 
 .user-greeting p {
     margin: 0;
-    font-size: 16px;
+    font-size: 24px;
 }
 
 .containerheader {
-    display: flex;
+    padding: 10px;
 }
 
 .upperCont1 {
-    flex: 0 0;
+    display: flex;
+    margin-left: 25%;
+    margin-bottom: 10px;
 }
 
 .upperCont2 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex: 1;
     /* Занимает всю высоту */
 }

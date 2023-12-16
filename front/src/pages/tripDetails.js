@@ -19,18 +19,17 @@ const TripDetails = ({ loggedInUser }) => {
             try {
                 const response = await axios.get(`http://localhost:8000/trip/${id}`);
                 setTrip(response.data);
-
+                console.log("RESPONSE", response);
                 const countryId = response.data.country_id;
-
-                if (countryId) {
-                    const carcassTypeResponse = await axios.get(`http://localhost:8000/country/${countryId}`);
-                    setCountry(carcassTypeResponse.data.name);
+                console.log("CID", countryId);
+                if (countryId != null && countryId != undefined) {
+                    const countryResponse = await axios.get(`http://localhost:8000/country/${countryId}`);
+                    console.log(countryResponse);
+                    setCountry(countryResponse.data.name);
                 }
             } catch (error) {
                 console.error('Error fetching trip details:', error.message);
             }
-
-
         };
 
 
